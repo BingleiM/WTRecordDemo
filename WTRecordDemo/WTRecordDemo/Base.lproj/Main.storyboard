@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h0t-a4-Lsc" customClass="EZAudioPlot">
+                                <rect key="frame" x="50" y="70" width="275" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="16v-ev-vDS"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbd-Rf-naT">
+                                <rect key="frame" x="50" y="436" width="80" height="48"/>
+                                <color key="backgroundColor" red="0.50196081400000003" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="RDg-Su-HvE"/>
+                                    <constraint firstAttribute="width" secondItem="pbd-Rf-naT" secondAttribute="height" multiplier="5:3" id="rY6-dL-at9"/>
+                                </constraints>
+                                <state key="normal" title="开始">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startRecord:" destination="BYZ-38-t0r" eventType="touchUpInside" id="43U-Zk-Vzl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ioM-sb-Hjd">
+                                <rect key="frame" x="245" y="436" width="80" height="48"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ioM-sb-Hjd" secondAttribute="height" multiplier="5:3" id="6G1-hm-kaa"/>
+                                </constraints>
+                                <state key="normal" title="暂停">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pauseRecord:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dPp-Ko-B0j"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pbd-Rf-naT" secondAttribute="trailing" constant="20" symbolic="YES" id="6uo-HK-Sjp"/>
+                            <constraint firstItem="ioM-sb-Hjd" firstAttribute="width" secondItem="pbd-Rf-naT" secondAttribute="width" id="7wk-8f-BQX"/>
+                            <constraint firstItem="ioM-sb-Hjd" firstAttribute="trailing" secondItem="h0t-a4-Lsc" secondAttribute="trailing" id="BmM-S6-hdT"/>
+                            <constraint firstItem="ioM-sb-Hjd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="EJI-IW-8Q3"/>
+                            <constraint firstItem="ioM-sb-Hjd" firstAttribute="centerY" secondItem="pbd-Rf-naT" secondAttribute="centerY" id="Lvn-tC-k89"/>
+                            <constraint firstItem="h0t-a4-Lsc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="SSX-Fb-YTf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="h0t-a4-Lsc" secondAttribute="trailing" constant="50" id="YyN-tl-gVD"/>
+                            <constraint firstItem="pbd-Rf-naT" firstAttribute="top" secondItem="h0t-a4-Lsc" secondAttribute="bottom" constant="66" id="hL0-yr-MQc"/>
+                            <constraint firstItem="pbd-Rf-naT" firstAttribute="leading" secondItem="h0t-a4-Lsc" secondAttribute="leading" id="j8o-8y-Y6u"/>
+                            <constraint firstItem="h0t-a4-Lsc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="vgV-bi-tFY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="audioPlot" destination="h0t-a4-Lsc" id="Ysf-qD-Zb1"/>
+                        <outlet property="pauseButton" destination="ioM-sb-Hjd" id="gxO-xF-ROH"/>
+                        <outlet property="startButton" destination="pbd-Rf-naT" id="79P-MB-3Di"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
